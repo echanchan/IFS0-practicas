@@ -3,6 +3,8 @@
 
 ---
 
+<hr>
+<hr>
 <h1 id="ifs0-–-prácticas-de-análisis-de-requerimientos-de-infraestructura-de-servidores">IFS0 – Prácticas de Análisis de Requerimientos de Infraestructura de Servidores</h1>
 <h2 id="📘-asignatura">📘 Asignatura</h2>
 <p><strong>IFS0 – Analizando Necesidades de Infraestructura de Servidores</strong></p>
@@ -104,14 +106,10 @@ Todo lo que no esté documentado en este repositorio <strong>no será considerad
 <li>Evitar párrafos extensos sin estructura</li>
 </ul>
 <p>Ejemplo básico:</p>
-<pre class=" language-markdown"><code class="prism  language-markdown"><span class="token title important"><span class="token punctuation">##</span> Necesidad 1</span>
+<pre class="  language-markdown"><code class="prism  language-markdown"><span class="token title important"><span class="token punctuation">##</span> Necesidad 1</span>
 <span class="token bold"><span class="token punctuation">**</span>Tipo:<span class="token punctuation">**</span></span> Explícita  
 <span class="token bold"><span class="token punctuation">**</span>Clasificación:<span class="token punctuation">**</span></span> Operativa  
+</code></pre><p><span class="token bold"><span class="token punctuation"><strong></strong></span>Descripción:<span class="token punctuation"></span></span><br>
+El sistema presenta interrupciones frecuentes que afectan el trabajo diario.<br>
+</p>
 
-<span class="token bold"><span class="token punctuation">**</span>Descripción:<span class="token punctuation">**</span></span>  
-El sistema presenta interrupciones frecuentes que afectan el trabajo diario.
-</code></pre>
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTM0NDQ4NjldfQ==
--->
