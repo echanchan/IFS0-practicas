@@ -6,7 +6,7 @@
 <h1 id="ifs0-–-prácticas-de-análisis-de-requerimientos-de-infraestructura-de-servidores">IFS0 – Prácticas de Análisis de Requerimientos de Infraestructura de Servidores</h1>
 <h2 id="📘-asignatura">📘 Asignatura</h2>
 <p><strong>IFS0 – Analizando Necesidades de Infraestructura de Servidores</strong></p>
-<p>Este repositorio contiene las <strong>prácticas evaluadas</strong> correspondientes a la <strong>Semanas 1</strong> de la Unidad 1, desarrollada bajo un <strong>enfoque de formación por competencias</strong>.</p>
+<p>Este repositorio contiene las <strong>prácticas evaluadas</strong> correspondientes a las <strong>Semanas 1 y 2</strong> de la Unidad 1, desarrolladas bajo un <strong>enfoque de formación por competencias</strong>.</p>
 <p>El objetivo no es solo entregar documentos, sino <strong>demostrar el desempeño propio de un analista de infraestructura</strong>, dejando evidencia clara, ordenada y profesional.</p>
 <hr>
 <h2 id="🎯-propósito-del-repositorio">🎯 Propósito del repositorio</h2>
@@ -29,6 +29,9 @@ Todo lo que no esté documentado en este repositorio <strong>no será considerad
 <p>IFS0-practicas/<br>
 ├── semana1/<br>
 │   └── necesidades_usuario.md<br>
+├── semana2/<br>
+│   ├── instrumento_recopilacion.md<br>
+│   └── matriz_priorizacion.md<br>
 └── <a href="http://README.md">README.md</a></p>
 <p>⚠️ <strong>No cambiar nombres de carpetas ni archivos</strong>, ya que se usan para la evaluación.</p>
 <hr>
@@ -71,6 +74,28 @@ Todo lo que no esté documentado en este repositorio <strong>no será considerad
 <li>Justificación del instrumento</li>
 </ul>
 <hr>
+<h3 id="📄-archivo-2">📄 Archivo 2</h3>
+<p><code>semana2/matriz_priorizacion.md</code></p>
+<p>Debe incluir:</p>
+<ul>
+<li>Lista de requerimientos evaluados</li>
+<li>Matriz de priorización considerando:
+<ul>
+<li>Impacto operativo</li>
+<li>Criticidad técnica</li>
+</ul>
+</li>
+<li>Clasificación:
+<ul>
+<li>Alta</li>
+<li>Media</li>
+<li>Baja prioridad</li>
+</ul>
+</li>
+<li>Justificación breve de cada decisión</li>
+</ul>
+<p>📌 <strong>Aún no se diseña infraestructura en esta semana.</strong></p>
+<hr>
 <h2 id="📝-formato-de-los-documentos">📝 Formato de los documentos</h2>
 <ul>
 <li>Todos los archivos deben estar en formato <strong>Markdown (.md)</strong></li>
@@ -87,3 +112,6 @@ Todo lo que no esté documentado en este repositorio <strong>no será considerad
 El sistema presenta interrupciones frecuentes que afectan el trabajo diario.
 </code></pre>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE4NTM0NDQ4NjldfQ==
+-->
