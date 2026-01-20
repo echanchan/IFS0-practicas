@@ -5,17 +5,18 @@
 
 <hr>
 <hr>
-<h1 id="ifs0-–-prácticas-de-análisis-de-requerimientos-de-infraestructura-de-servidores">IFS0 – Prácticas de Análisis de Requerimientos de Infraestructura de Servidores</h1>
+<h1 id="ifs0-–-prácticas-de-análisis-de-requerimientos-de-infraestructura-de-servidores">IFS0 – Prácticas de Análisis de Requerimientos
+de Infraestructura de Servidores</h1>
 <h2 id="📘-asignatura">📘 Asignatura</h2>
-<p><strong>IFS0 – Analizando Necesidades de Infraestructura de Servidores</strong></p>
-<p>Este repositorio contiene las <strong>prácticas evaluadas</strong> correspondientes a las <strong>Semanas 1 y 2</strong> de la Unidad 1, desarrolladas bajo un <strong>enfoque de formación por competencias</strong>.</p>
+<p><strIFS0 – Analizando Necesidades de Infraestructura de Servidores</strong></p>
+<p>Este repositorio contiene las prácticas evaluadas</strong> correspondientes a las <strong>Semanas 1 y 2</strong> de la Unidad 1, desarrolladas bajo un <strong>enfoque de formación por competencias</strong>.</p>
 <p>El objetivo no es solo entregar documentos, sino <strong>demostrar el desempeño propio de un analista de infraestructura</strong>, dejando evidencia clara, ordenada y profesional.</p>
 <hr>
 <h2 id="🎯-propósito-del-repositorio">🎯 Propósito del repositorio</h2>
 <p>En este repositorio el estudiante deberá:</p>
 <ul>
-<li>Analizar un caso realista de una organización</li>
-<li>Identificar <strong>necesidades del usuario</strong></li>
+<li>Analizar un casorealista de una organización</li>
+<li>Identificar <strong>necesidades el usuario</strong></li>
 <li>Formular <strong>requerimientos iniciales</strong></li>
 <li>Validar y <strong>priorizar requerimientos</strong></li>
 <li>Documentar todo el proceso en <strong>Markdown</strong></li>
@@ -23,21 +24,21 @@
 </ul>
 <blockquote>
 <p>📌 <strong>Regla fundamental:</strong><br>
-Todo lo que no esté documentado en este repositorio <strong>no será considerado como evidencia</strong>.</p>
+Todo lo que no esté documentado en este repositorio <strono será considerado como evidencia</strong>.</p>
 </blockquote>
 <hr>
 <h2 id="📂-estructura-obligatoria-del-repositorio">📂 Estructura obligatoria del repositorio</h2>
 <p>El repositorio debe mantener la siguiente estructura:</p>
-<p>IFS0-practicas/<br>
-├── semana1/<br>
+IFS0-practicas/
+├── semana1/
 │   └── necesidades_usuario.md<br>
 ├── semana2/<br>
 │   ├── instrumento_recopilacion.md<br>
 │   └── matriz_priorizacion.md<br>
 └── <a href="http://README.md">README.md</a></p>
-<p>⚠️ <strong>No cambiar nombres de carpetas ni archivos</strong>, ya que se usan para la evaluación.</p>
+<p>⚠️ <strong>No cambiar nombres de carpetas ni archivos</stro, ya que se usan para la evaluación.</p>
 <hr>
-<h2 id="🧪-semana-1-–-identificación-de-necesidades-del-usuario">🧪 Semana 1 – Identificación de necesidades del usuario</h2>
+<h2 id="🧪-semana-1-–-identificación-de-necesidades-del-usuario">🧪 Semana 1 – Identificación necesidades del usuario</h2>
 <h3 id="📄-archivo-a-entregar">📄 Archivo a entregar</h3>
 <p><code>semana1/necesidades_usuario.md</code></p>
 <h3 id="contenido-mínimo-esperado">Contenido mínimo esperado</h3>
@@ -109,7 +110,12 @@ Todo lo que no esté documentado en este repositorio <strong>no será considerad
 <pre class="  language-markdown"><code class="prism  language-markdown"><span class="token title important"><span class="token punctuation">##</span> Necesidad 1</span>
 <span class="token bold"><span class="token punctuation">**</span>Tipo:<span class="token punctuation">**</span></span> Explícita  
 <span class="token bold"><span class="token punctuation">**</span>Clasificación:<span class="token punctuation">**</span></span> Operativa  
-</code></pre><p><span class="token bold"><span class="token punctuation"><strong></strong></span>Descripción:<span class="token punctuation"></span></span><br>
+</code></pre><p>
+<span class="token bold"><span class="token punctuation"><strong></strong>**</span>Descripción:<span class="token punctuation">**</span></span><br>  
 El sistema presenta interrupciones frecuentes que afectan el trabajo diario.<br>
-</p>
 
+</code></pre>
+
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzM0NDc4MjZdfQ==
+-->
