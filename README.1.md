@@ -3,7 +3,7 @@
 ## 📘 Asignatura
 **IFS0 – Analizando Necesidades de Infraestructura de Servidores**
 
-Este repositorio contiene las **prácticas evaluadas** correspondientes a las **Semanas 1 y 2** de la Unidad 1, desarrolladas bajo un **enfoque de formación por competencias**.
+Este repositorio contiene las **prácticas evaluadas** correspondientes a la **Semanas 1** de la Unidad 1, desarrollada bajo un **enfoque de formación por competencias**.
 
 El objetivo no es solo entregar documentos, sino **demostrar el desempeño propio de un analista de infraestructura**, dejando evidencia clara, ordenada y profesional.
 
@@ -32,9 +32,6 @@ El repositorio debe mantener la siguiente estructura:
 IFS0-practicas/  
 ├── semana1/  
 │   └── necesidades_usuario.md  
-├── semana2/  
-│   ├── instrumento_recopilacion.md  
-│   └── matriz_priorizacion.md  
 └── README.md
 
 ⚠️ **No cambiar nombres de carpetas ni archivos**, ya que se usan para la evaluación.
@@ -64,38 +61,6 @@ El documento debe incluir:
 
 ---
 
-## 🧪 Semana 2 – Validación y priorización de requerimientos
-
-### 📄 Archivo 1
-`semana2/instrumento_recopilacion.md`
-
-Debe incluir:
-- Tipo de instrumento elegido:
-  - Entrevista **o**
-  - Cuestionario
-- Al menos **5 preguntas**
-- Justificación del instrumento
-
----
-
-### 📄 Archivo 2
-`semana2/matriz_priorizacion.md`
-
-Debe incluir:
-- Lista de requerimientos evaluados
-- Matriz de priorización considerando:
-  - Impacto operativo
-  - Criticidad técnica
-- Clasificación:
-  - Alta
-  - Media
-  - Baja prioridad
-- Justificación breve de cada decisión
-
-📌 **Aún no se diseña infraestructura en esta semana.**
-
----
-
 ## 📝 Formato de los documentos
 
 - Todos los archivos deben estar en formato **Markdown (.md)**
@@ -114,5 +79,5 @@ Ejemplo básico:
 El sistema presenta interrupciones frecuentes que afectan el trabajo diario.
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzUxMTQ3OTg1XX0=
+eyJoaXN0b3J5IjpbMzU5OTI2Njk3XX0=
 -->
