@@ -1,9 +1,3 @@
----
-
-
----
-
-<hr>
 <hr>
 <h1 id="ifs0-–-prácticas-de-análisis-de-requerimientos-de-infraestructura-de-servidores">IFS0 – Prácticas de Análisis de Requerimientos
 de Infraestructura de Servidores</h1>
@@ -117,5 +111,5 @@ El sistema presenta interrupciones frecuentes que afectan el trabajo diario.<br>
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM0NDc4MjZdfQ==
+eyJoaXN0b3J5IjpbLTE5NTYyMjM3MDJdfQ==
 -->
