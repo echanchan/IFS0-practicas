@@ -134,7 +134,7 @@
 <p><strong>Estructura del repositorio (Práctica 1):</strong></p>
 
 <pre><code>IFS0-practicas/
-├── semana1/
+├── practica_1/
 │   └── necesidades_usuario.md
 └── README.md
 </code></pre>
