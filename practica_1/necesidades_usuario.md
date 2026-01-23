@@ -1,35 +1,35 @@
-# Pr ctica 1 - Identificaci¢n de necesidades del usuario  
+# PrÂ ctica 1 - IdentificaciÂ¢n de necesidades del usuario  
 
-**Unidad 1: An lisis de requerimientos de servidores**  
+**Unidad 1: AnÂ lisis de requerimientos de servidores**  
 **Asignatura:** IFS0 - Analizando Necesidades de Infraestructura de Servidores
 
 ---
 
 ## 1. Integrantes del grupo
-- Nombre completo - Carnet
-- Nombre completo - Carnet
-- Nombre completo - Carnet
+- Nombre completo - Carnetâ€š
+- Nombre completo - Carnetâ€š
+- Nombre completo - Carnetâ€š
 
 ---
 
-## 2. Introducci¢n del caso
+## 2. IntroducciÂ¢n del caso
 Una empresa con **25 empleados** presenta los siguientes problemas:
 *	Lentitud en el sistema
-*	P‚rdida de archivos
-*	Ca¡das frecuentes del sistema
+*	Pâ€šrdida de archivos
+*	CaÂ¡das frecuentes del sistema
 
-La empresa no cuenta con documentaci¢n tecnica, y los usuarios describen los problemas en lenguaje no tecnico.
+La empresa no cuenta con documentaciÂ¢n teâ€šcnica, y los usuarios describen los problemas en lenguaje no teâ€šcnico.
 
-El estudiante asume el rol de analista de infraestructura encargado de comprender el problema, no de resolverlo a£n.
+El estudiante asume el rol de analista de infraestructura encargado de comprender el problema, no de resolverlo aÂ£n.
 
 
 ---
 
-## 3. Identificaci¢n de necesidades del usuario
+## 3. IdentificaciÂ¢n de necesidades del usuario
 
 ### 3.1 Tabla de necesidades
 
-| Necesidad | Tipo (Expl¡cita / Impl¡cita) | Clasificaci¢n (Operativa / Tecnica) | Justificaci¢n |
+| Necesidad | Tipo (ExplÂ¡cita / ImplÂ¡cita) | ClasificaciÂ¢n (Operativa / Teâ€šcnica) | JustificaciÂ¢n |
 |----------|------------------------------|-------------------------------------|---------------|
 |          |                              |                                     |               |
 |          |                              |                                     |               |
@@ -37,11 +37,11 @@ El estudiante asume el rol de analista de infraestructura encargado de comprende
 
 ---
 
-## 4. Formulaci¢n de requerimientos iniciales
+## 4. FormulaciÂ¢n de requerimientos iniciales
 
 ### 4.1 Tabla de requerimientos
 
-| Requerimiento inicial | Necesidad relacionada | Clasificaci¢n (Funcional / No funcional) | Justificaci¢n |
+| Requerimiento inicial | Necesidad relacionada | ClasificaciÂ¢n (Funcional / No funcional) | JustificaciÂ¢n |
 |----------------------|-----------------------|-------------------------------------------|---------------|
 |                      |                       |                                           |               |
 |                      |                       |                                           |               |
@@ -50,5 +50,8 @@ El estudiante asume el rol de analista de infraestructura encargado de comprende
 ---
 
 ## 5. Observaciones finales
-[Espacio opcional para comentarios finales, sin incluir soluciones tecnicas.]
+[Espacio opcional para comentarios finales, sin incluir soluciones teâ€šcnicas.]
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTc4NzQ2NTU5OV19
+-->
