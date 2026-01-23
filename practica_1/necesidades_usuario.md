@@ -6,9 +6,9 @@
 ---
 
 ## 1. Integrantes del grupo
-- Nombre completo - Carn‚
-- Nombre completo - Carn‚
-- Nombre completo - Carn‚
+- Nombre completo - Carnet
+- Nombre completo - Carnet
+- Nombre completo - Carnet
 
 ---
 
@@ -18,7 +18,7 @@ Una empresa con **25 empleados** presenta los siguientes problemas:
 *	P‚rdida de archivos
 *	Ca¡das frecuentes del sistema
 
-La empresa no cuenta con documentaci¢n t‚cnica, y los usuarios describen los problemas en lenguaje no t‚cnico.
+La empresa no cuenta con documentaci¢n tecnica, y los usuarios describen los problemas en lenguaje no tecnico.
 
 El estudiante asume el rol de analista de infraestructura encargado de comprender el problema, no de resolverlo a£n.
 
@@ -29,7 +29,7 @@ El estudiante asume el rol de analista de infraestructura encargado de comprende
 
 ### 3.1 Tabla de necesidades
 
-| Necesidad | Tipo (Expl¡cita / Impl¡cita) | Clasificaci¢n (Operativa / T‚cnica) | Justificaci¢n |
+| Necesidad | Tipo (Expl¡cita / Impl¡cita) | Clasificaci¢n (Operativa / Tecnica) | Justificaci¢n |
 |----------|------------------------------|-------------------------------------|---------------|
 |          |                              |                                     |               |
 |          |                              |                                     |               |
@@ -50,5 +50,5 @@ El estudiante asume el rol de analista de infraestructura encargado de comprende
 ---
 
 ## 5. Observaciones finales
-[Espacio opcional para comentarios finales, sin incluir soluciones t‚cnicas.]
+[Espacio opcional para comentarios finales, sin incluir soluciones tecnicas.]
 
