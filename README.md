@@ -23,14 +23,11 @@ Todo lo que no esté documentado en este repositorio <strong>no será considerad
 <hr>
 <h2 id="📂-estructura-obligatoria-del-repositorio">📂 Estructura obligatoria del repositorio</h2>
 <p>El repositorio debe mantener la siguiente estructura:</p>
+<code>
 IFS0-practicas/
-
-├── semana1/
-│   └── necesidades_usuario.md<br>
-├── semana2/<br>
-│   ├── instrumento_recopilacion.md<br>
-│   └── matriz_priorizacion.md<br>
-└── <a href="http://README.md">README.md</a></p>
+├── practica_1/
+│   └── necesidades_usuario.md<br>└── <a href="http://README.md">README.md</a></code>
+</p>
 <p>⚠️ <strong>No cambiar nombres de carpetas ni archivos</stro, ya que se usan para la evaluación.</p>
 <hr>
 <h2 id="🧪-semana-1-–-identificación-de-necesidades-del-usuario">🧪 Semana 1 – Identificación necesidades del usuario</h2>
@@ -112,6 +109,5 @@ El sistema presenta interrupciones frecuentes que afectan el trabajo diario.<br>
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzg1Njc4MDksLTE5NTYyMjM3MDJdfQ
-==
+eyJoaXN0b3J5IjpbNTQ3MTc5OTksLTE5NTYyMjM3MDJdfQ==
 -->
