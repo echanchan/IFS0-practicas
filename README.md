@@ -2,7 +2,7 @@
 <h1 id="ifs0-–-prácticas-de-análisis-de-requerimientos-de-infraestructura-de-servidores">IFS0 – Prácticas de Análisis de Requerimientos
 de Infraestructura de Servidores</h1>
 <h2 id="📘-asignatura">📘 Asignatura</h2>
-<p><strIFS0 – Analizando Necesidades de Infraestructura de Servidores</strong></p>
+<p><strong>IFS0 – Analizando Necesidades de Infraestructura de Servidores</strong></p>
 <p>Este repositorio contiene las prácticas evaluadas</strong> correspondientes a las <strong>Semanas 1 y 2</strong> de la Unidad 1, desarrolladas bajo un <strong>enfoque de formación por competencias</strong>.</p>
 <p>El objetivo no es solo entregar documentos, sino <strong>demostrar el desempeño propio de un analista de infraestructura</strong>, dejando evidencia clara, ordenada y profesional.</p>
 <hr>
@@ -18,12 +18,13 @@ de Infraestructura de Servidores</h1>
 </ul>
 <blockquote>
 <p>📌 <strong>Regla fundamental:</strong><br>
-Todo lo que no esté documentado en este repositorio <strono será considerado como evidencia</strong>.</p>
+Todo lo que no esté documentado en este repositorio <strong>no será considerado como evidencia</strong>.</p>
 </blockquote>
 <hr>
 <h2 id="📂-estructura-obligatoria-del-repositorio">📂 Estructura obligatoria del repositorio</h2>
 <p>El repositorio debe mantener la siguiente estructura:</p>
 IFS0-practicas/
+
 ├── semana1/
 │   └── necesidades_usuario.md<br>
 ├── semana2/<br>
@@ -111,5 +112,6 @@ El sistema presenta interrupciones frecuentes que afectan el trabajo diario.<br>
 </code></pre>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTYyMjM3MDJdfQ==
+eyJoaXN0b3J5IjpbLTEyMzg1Njc4MDksLTE5NTYyMjM3MDJdfQ
+==
 -->
