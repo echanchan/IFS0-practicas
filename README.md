@@ -1,173 +1,281 @@
-<hr>
-<h1 id="ifs0-practicas-analisis-requerimientos-infraestructura-servidores">
-  IFS0 ‚Äì Pr√°cticas de Infraestructura de Servidores
-</h1>
+# GuÌa de Trabajo - Practica 4
 
-<h2 id="guia-trabajo-practica-3">üìò Gu√≠a de Trabajo ‚Äì Pr√°ctica 3</h2>
-<p><strong>Unidad 1:</strong> Infraestructura de servidores</p>
-<p><strong>Pr√°ctica:</strong> Dise√±o Conceptual de Infraestructura de Servidores</p>
+# ImplementaciÛn y GestiÛn de Arreglos RAID y Consolas de AdministraciÛn
 
-<hr>
+---
 
-<h2 id="competencia">1Ô∏è‚É£ Competencia a desarrollar</h2>
-<p>
-  <strong>
-    Elabora un esquema conceptual de infraestructura de servidores a partir de requerimientos priorizados,
-    utilizando diagramas l√≥gicos y justificando decisiones de dise√±o sin considerar marcas ni configuraciones espec√≠ficas.
-  </strong>
-</p>
+## 1. Competencia a desarrollar
 
-<hr>
+Implementa y administra arreglos RAID por software en Linux, integrando mecanismos de persistencia, monitoreo, simulaci¢n de fallos y recuperaci¢n, complementando la gesti¢n mediante herramientas gr†ficas de administraci¢n segura en entorno servidor.
 
+---
 
-<h2 id="relacion-clase">2Ô∏è‚É£ Contexto de la pr√°ctica (escenario)</h2>
+## 2. Contexto de la pr·ctica (escenario)
 
-<p>
-  Una <strong>empresa de servicios profesionales</strong>, con <strong>25 empleados</strong>, utiliza un sistema interno
-  para apoyar sus actividades administrativas y operativas diarias.
-</p>
+Una organizaciÛn tecnolÛgica requiere fortalecer su infraestructura de almacenamiento local para:
 
-<p>El sistema debe permitir principalmente:</p>
-<ul>
-  <li>Almacenamiento y consulta centralizada de documentos administrativos</li>
-  <li>Acceso compartido a informaci√≥n entre distintas √°reas de la empresa</li>
-  <li>Registro y consulta de informaci√≥n b√°sica de clientes y proyectos</li>
-</ul>
+* Garantizar continuidad operativa ante fallos de disco
+* Evaluar rendimiento en escenarios crÌticos
+* Implementar monitoreo centralizado del servidor
+* Gestionar almacenamiento tanto por CLI como por interfaz web
 
-<p>Para efectos de esta pr√°ctica, se consideran los siguientes <strong>requerimientos funcionales</strong>:</p>
-<ul>
-  <li>Acceso centralizado a la informaci√≥n desde los equipos de trabajo de los empleados</li>
-  <li>Acceso simult√°neo de m√∫ltiples usuarios sin afectar el funcionamiento del sistema</li>
-  <li>Disponibilidad del sistema durante la jornada laboral</li>
-</ul>
+El estudiante asume el rol de Administrador de Infraestructura, responsable de:
 
-<p>Asimismo, el sistema debe cumplir con los siguientes <strong>requerimientos no funcionales</strong>:</p>
-<ul>
-  <li>Protecci√≥n de la informaci√≥n contra accesos no autorizados</li>
-  <li>Reducci√≥n del riesgo de p√©rdida de informaci√≥n</li>
-  <li>Separaci√≥n de componentes cr√≠ticos para mejorar seguridad y confiabilidad</li>
-  <li>Capacidad de crecimiento gradual sin redise√±ar completamente la infraestructura</li>
-</ul>
+* Implementar distintos niveles RAID (0,1,5,6,10)
+* Evaluar tolerancia a fallos
+* Configurar persistencia del sistema
+* Integrar paneles de administraciÛn (Cockpit y Webmin)
+* Aplicar controles b·sicos de seguridad en acceso remoto
 
-<p>La empresa presenta adem√°s las siguientes condiciones:</p>
-<ul>
-  <li>No cuenta con documentaci√≥n t√©cnica del sistema actual</li>
-  <li>No dispone de personal especializado en tecnolog√≠as de informaci√≥n</li>
-  <li>Los requerimientos del sistema ya fueron <strong>identificados, validados y priorizados</strong>
-      en una etapa previa.</li>
-</ul>
+---
 
-<p>
-  El estudiante asume el rol de <strong>analista de infraestructura</strong>, encargado de
-  <strong>seleccionar los roles de servidores necesarios</strong> y
-  <strong>proponer un dise√±o conceptual de la infraestructura</strong> que permita visualizar
-  c√≥mo deber√≠an organizarse los componentes del sistema,
-  <strong>sin realizar implementaci√≥n ni seleccionar tecnolog√≠as espec√≠ficas</strong>.
-</p>
+## 3. DesempeÒos esperados
 
-<hr>
+El estudiante demuestra que es capaz de:
 
+* Configurar arreglos RAID utilizando `mdadm`
+* Diferenciar niveles RAID seg˙n rendimiento y redundancia
+* Implementar montaje persistente mediante `/etc/fstab`
+* Simular fallos controlados y ejecutar procesos de recuperaciÛn
+* Interpretar estado del sistema mediante `/proc/mdstat`
+* Gestionar almacenamiento desde Cockpit y Webmin
+* Aplicar reglas b†sicas de firewall para proteger servicios administrativos
 
-<h2 id="desempenos">3Ô∏è‚É£ Desempe√±os esperados</h2>
-<ul>
-  <li>Traduce requerimientos en <strong>componentes de infraestructura</strong></li>
-  <li>Identifica roles de servidores adecuados</li>
-  <li>Propone una arquitectura <strong>l√≥gica por capas</strong></li>
-  <li>Representa el dise√±o mediante diagramas</li>
-  <li>Justifica decisiones de dise√±o a nivel conceptual</li>
-</ul>
+---
 
-<hr>
+# BLOQUE I - RAID 0, 1 y 10
 
-<h2 id="actividades">4Ô∏è‚É£ Actividades guiadas</h2>
+---
 
-<h3 id="actividad-1">üß™ Actividad 1 ‚Äì Identificaci√≥n de componentes de infraestructura</h3>
-<ol>
-  <li>Liste los <strong>requerimientos clave</strong> (m√≠nimo 2).</li>
-  <li>Para cada requerimiento identifique:
-    <ul>
-      <li>Rol del servidor necesario (Web, Aplicaciones, Base de Datos, etc.).</li>
-    </ul>
-  </li>
-  <li>Justifique brevemente la selecci√≥n de cada rol.</li>
-</ol>
-<p><strong>No incluir sistemas operativos, marcas ni tecnolog√≠as espec√≠ficas.</strong></p>
+## 4. Actividades guiadas
 
-<h3 id="actividad-2">üß™ Actividad 2 ‚Äì Dise√±o conceptual de la arquitectura</h3>
-<ol>
-  <li>Organice los servidores en una <strong>arquitectura l√≥gica por capas</strong>:
-    <ul>
-      <li>Capa de presentaci√≥n</li>
-      <li>Capa de aplicaci√≥n</li>
-      <li>Capa de datos</li>
-    </ul>
-  </li>
-  <li>Defina:
-    <ul>
-      <li>Qu√© componentes estar√°n expuestos</li>
-      <li>Qu√© componentes estar√°n protegidos en la red interna</li>
-    </ul>
-  </li>
-</ol>
+### Actividad 1 - PreparaciÛn del entorno
 
-<h3 id="actividad-3">üß™ Actividad 3 ‚Äì Diagrama de infraestructura</h3>
-<ol>
-  <li>Elabore un <strong>diagrama l√≥gico de infraestructura</strong> utilizando:
-    <ul>
-      <li>Mermaid</li>
-      <li>o una herramienta de diagramaci√≥n (Draw.io, Network Notepad, etc.)</li>
-    </ul>
-  </li>
-  <li>El diagrama debe mostrar:
-    <ul>
-      <li>Usuarios o sucursales</li>
-      <li>Conectividad</li>
-      <li>Servidores por rol</li>
-      <li>Flujo general de comunicaci√≥n</li>
-    </ul>
-  </li>
-</ol>
-<p><strong>El diagrama debe ser claro, legible y coherente, no decorativo.</strong></p>
+1. Verificar instalaciÛn de `mdadm`
+2. Identificar discos disponibles con `lsblk`
+3. Confirmar que no existan metadatos RAID previos
 
-<hr>
+---
 
-<h2 id="evidencia">5Ô∏è‚É£ Evidencia a entregar</h2>
+### Actividad 2 - CreaciÛn de RAID 0, 1 y 10
 
-<p><strong>Archivo √∫nico:</strong></p>
-<p><code>practica_3/diseno_conceptual_infraestructura.md</code></p>
+Implementar:
 
-<p><strong>Contenido m√≠nimo esperado:</strong></p>
-<ol>
-  <li>Introducci√≥n al escenario</li>
-  <li>Requerimientos considerados</li>
-  <li>Lista de servidores por rol</li>
-  <li>Diagrama de infraestructura (Mermaid o imagen)</li>
-  <li>Justificaci√≥n t√©cnica del dise√±o</li>
-</ol>
+* RAID 0 (2 discos - alto rendimiento)
+* RAID 1 (2 discos - espejo)
+* RAID 10 (4 discos - balance rendimiento/redundancia)
 
-<hr>
+Cada creaciÛn debe:
 
-<h2 id="entrega-github">6Ô∏è‚É£ Entrega en GitHub</h2>
-<pre><code>IFS0-practicas/
-‚îî‚îÄ‚îÄ practica_3/
-    ‚îî‚îÄ‚îÄ diseno_conceptual_infraestructura.md
-</code></pre>
-<hr>
+* Formatearse con `mkfs.ext4`
+* Configurarse persistencia con:
 
-<h2 id="criterios">7Ô∏è‚É£ Criterios de evaluaci√≥n (referencia)</h2>
-<ul>
-  <li>Coherencia entre requerimientos y dise√±o</li>
-  <li>Correcta identificaci√≥n de roles de servidor</li>
-  <li>Uso adecuado de arquitectura por capas</li>
-  <li>Claridad del diagrama</li>
-</ul>
+  * `mdadm --detail --scan`
+  * `/etc/mdadm/mdadm.conf`
+  * `update-initramfs -u`
+* Registrarse en `/etc/fstab`
 
-<hr>
+Ejemplo de lÌnea en fstab:
 
-<h2 id="errores">üö´ Errores que evitar en la pr√°ctica</h2>
-<ul>
-  <li>‚ùå Uso de marcas o modelos</li>
-  <li>‚ùå Configuraciones t√©cnicas detalladas</li>
-  <li>‚ùå Comandos o instalaci√≥n</li>
-  <li>‚ùå Dise√±o sin relaci√≥n con requerimientos</li>
-</ul>
+```
+/dev/md0 /mnt/raid0 ext4 defaults 0 0
+```
+
+El estudiante debe explicar:
+
+* Que representa cada campo
+* Que implica el par†metro `defaults`
+* Por que se usan los dos £˙ltimos valores en 0
+
+---
+
+### Actividad 3 - Pruebas de rendimiento
+
+Utilizar:
+
+```
+dd if=/dev/zero of=/mnt/raidX/test.img bs=1G count=2 conv=fdatasync
+```
+
+Analizar:
+
+* Velocidad en MB/s
+* Diferencia entre RAID 0 y RAID 1
+* Balance en RAID 10
+
+---
+
+### Actividad 4 - SimulaciÛn de fallos
+
+1. Marcar disco como `faulty`
+2. Verificar estado con `mdadm --detail`
+3. Remover disco
+4. Agregar disco nuevo
+5. Monitorear reconstrucciÛn con:
+
+```
+watch cat /proc/mdstat
+```
+
+Analizar:
+
+* Estado `degraded`
+* Proceso de `resync`
+* Tiempo de reconstrucciÛn
+
+---
+
+# BLOQUE II - RAID 5 y RAID 6
+
+---
+
+### Actividad 5 - ImplementaciÛn de RAID 5 y 6
+
+Crear:
+
+* RAID 5 (5 discos)
+* RAID 6 (5 discos)
+
+Formatear, montar y configurar persistencia.
+
+---
+
+### Actividad 6 - An·lisis de eficiencia
+
+Ejecutar:
+
+```
+df -h
+```
+
+Comparar:
+
+* Capacidad ˙til RAID 5 (N-1)
+* Capacidad ˙til RAID 6 (N-2)
+
+Explicar impacto de paridad simple vs doble paridad.
+
+---
+
+### Actividad 7 - SimulaciÛn de desastres
+
+Escenario RAID 5:
+
+* Fallo de un disco
+* VerificaciÛn de persistencia de datos
+* ReconstrucciÛn
+
+Escenario RAID 6:
+
+* Fallo simultaneo de dos discos
+* VerificaciÛn de acceso a datos
+* ReconstrucciÛn doble
+
+Explicar diferencia estructural entre ambos niveles.
+
+---
+
+# BLOQUE III - AdministraciÛn Gr†fica
+
+---
+
+### Actividad 8 - InstalaciÛn de Cockpit
+
+1. Instalar paquete
+2. Habilitar servicio
+3. Verificar puerto 9090
+4. Instalar mÛdulo de almacenamiento
+
+Analizar:
+
+* Que informaciÛn muestra
+* CÛmo visualiza RAID
+* Ventajas frente a CLI
+
+---
+
+### Actividad 9 - InstalaciÛn de Webmin
+
+1. Agregar repositorio
+2. Instalar paquete
+3. Verificar puerto 10000
+4. Acceder al mÛdulo Linux RAID
+
+Comparar:
+
+* Nivel de detalle
+* Superficie de exposiciÛn
+* Configuraciones avanzadas
+
+---
+
+### Actividad 10 - ConfiguraciÛn de Firewall
+
+Abrir puertos:
+
+```
+ufw allow 9090/tcp
+ufw allow 10000/tcp
+```
+
+Explicar:
+
+* Riesgo de exponer paneles administrativos
+* Diferencia entre acceso local y acceso remoto
+* Buenas pr·cticas (VPN, restricciÛn por IP)
+
+---
+
+## 5. Evidencia a entregar
+
+Archivo ˙nico obligatorio:
+
+```
+IFS0-practicas/
+    practica_4/
+        raid_5_6.md
+```
+
+Contenido mÌnimo:
+
+1. IntroducciÛn del laboratorio
+2. Tabla comparativa de niveles RAID
+3. Evidencia de creaciÛn de RAID
+4. Evidencia de fallos y reconstrucciÛn
+5. Capturas o descripciÛn de Cockpit y Webmin
+6. An·lisis comparativo CLI vs GUI
+7. ReflexiÛn tÈcnica final
+
+---
+
+## 6. Entrega en GitHub
+
+```
+IFS0-practicas/
+    practica_4/
+        raid_5_6.md
+```
+
+---
+
+## 7. Criterios de evaluaciÛn
+
+* Correcta implementaciÛn de niveles RAID
+* Coherencia tÈcnica en explicaciÛn de paridad
+* Correcta configuraciÛn de persistencia
+* SimulaciÛn adecuada de fallos
+* Evidencia de reconstrucciÛn
+* ConfiguraciÛn funcional de Cockpit y Webmin
+* AplicaciÛn b†sica de control de acceso por firewall
+* An·lisis crÌtico comparativo
+
+---
+
+## Errores que evitar en la pr·ctica
+
+* No monitorear proceso de reconstrucciÛn
+* No configurar persistencia
+* No limpiar metadatos antes de reutilizar discos
+* Exponer paneles sin firewall
+* Limitarse a ejecutar comandos sin explicar su propÛsito
+
