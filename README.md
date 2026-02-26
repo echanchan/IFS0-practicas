@@ -1,281 +1,159 @@
-# GuÌa de Trabajo - Practica 4
-
-# ImplementaciÛn y GestiÛn de Arreglos RAID y Consolas de AdministraciÛn
-
----
-
-## 1. Competencia a desarrollar
-
-Implementa y administra arreglos RAID por software en Linux, integrando mecanismos de persistencia, monitoreo, simulaci¢n de fallos y recuperaci¢n, complementando la gesti¢n mediante herramientas gr†ficas de administraci¢n segura en entorno servidor.
-
----
-
-## 2. Contexto de la pr·ctica (escenario)
-
-Una organizaciÛn tecnolÛgica requiere fortalecer su infraestructura de almacenamiento local para:
-
-* Garantizar continuidad operativa ante fallos de disco
-* Evaluar rendimiento en escenarios crÌticos
-* Implementar monitoreo centralizado del servidor
-* Gestionar almacenamiento tanto por CLI como por interfaz web
-
-El estudiante asume el rol de Administrador de Infraestructura, responsable de:
-
-* Implementar distintos niveles RAID (0,1,5,6,10)
-* Evaluar tolerancia a fallos
-* Configurar persistencia del sistema
-* Integrar paneles de administraciÛn (Cockpit y Webmin)
-* Aplicar controles b·sicos de seguridad en acceso remoto
-
----
-
-## 3. DesempeÒos esperados
-
-El estudiante demuestra que es capaz de:
-
-* Configurar arreglos RAID utilizando `mdadm`
-* Diferenciar niveles RAID seg˙n rendimiento y redundancia
-* Implementar montaje persistente mediante `/etc/fstab`
-* Simular fallos controlados y ejecutar procesos de recuperaciÛn
-* Interpretar estado del sistema mediante `/proc/mdstat`
-* Gestionar almacenamiento desde Cockpit y Webmin
-* Aplicar reglas b†sicas de firewall para proteger servicios administrativos
-
----
-
-# BLOQUE I - RAID 0, 1 y 10
-
----
-
-## 4. Actividades guiadas
-
-### Actividad 1 - PreparaciÛn del entorno
-
-1. Verificar instalaciÛn de `mdadm`
-2. Identificar discos disponibles con `lsblk`
-3. Confirmar que no existan metadatos RAID previos
-
----
-
-### Actividad 2 - CreaciÛn de RAID 0, 1 y 10
-
-Implementar:
-
-* RAID 0 (2 discos - alto rendimiento)
-* RAID 1 (2 discos - espejo)
-* RAID 10 (4 discos - balance rendimiento/redundancia)
-
-Cada creaciÛn debe:
-
-* Formatearse con `mkfs.ext4`
-* Configurarse persistencia con:
-
-  * `mdadm --detail --scan`
-  * `/etc/mdadm/mdadm.conf`
-  * `update-initramfs -u`
-* Registrarse en `/etc/fstab`
-
-Ejemplo de lÌnea en fstab:
-
-```
-/dev/md0 /mnt/raid0 ext4 defaults 0 0
-```
-
-El estudiante debe explicar:
-
-* Que representa cada campo
-* Que implica el par†metro `defaults`
-* Por que se usan los dos £˙ltimos valores en 0
-
----
-
-### Actividad 3 - Pruebas de rendimiento
-
-Utilizar:
-
-```
-dd if=/dev/zero of=/mnt/raidX/test.img bs=1G count=2 conv=fdatasync
-```
-
-Analizar:
-
-* Velocidad en MB/s
-* Diferencia entre RAID 0 y RAID 1
-* Balance en RAID 10
-
----
-
-### Actividad 4 - SimulaciÛn de fallos
-
-1. Marcar disco como `faulty`
-2. Verificar estado con `mdadm --detail`
-3. Remover disco
-4. Agregar disco nuevo
-5. Monitorear reconstrucciÛn con:
-
-```
-watch cat /proc/mdstat
-```
-
-Analizar:
-
-* Estado `degraded`
-* Proceso de `resync`
-* Tiempo de reconstrucciÛn
-
----
-
-# BLOQUE II - RAID 5 y RAID 6
-
----
-
-### Actividad 5 - ImplementaciÛn de RAID 5 y 6
-
-Crear:
-
-* RAID 5 (5 discos)
-* RAID 6 (5 discos)
-
-Formatear, montar y configurar persistencia.
-
----
-
-### Actividad 6 - An·lisis de eficiencia
-
-Ejecutar:
-
-```
-df -h
-```
-
-Comparar:
-
-* Capacidad ˙til RAID 5 (N-1)
-* Capacidad ˙til RAID 6 (N-2)
-
-Explicar impacto de paridad simple vs doble paridad.
-
----
-
-### Actividad 7 - SimulaciÛn de desastres
-
-Escenario RAID 5:
-
-* Fallo de un disco
-* VerificaciÛn de persistencia de datos
-* ReconstrucciÛn
-
-Escenario RAID 6:
-
-* Fallo simultaneo de dos discos
-* VerificaciÛn de acceso a datos
-* ReconstrucciÛn doble
-
-Explicar diferencia estructural entre ambos niveles.
-
----
-
-# BLOQUE III - AdministraciÛn Gr†fica
-
----
-
-### Actividad 8 - InstalaciÛn de Cockpit
-
-1. Instalar paquete
-2. Habilitar servicio
-3. Verificar puerto 9090
-4. Instalar mÛdulo de almacenamiento
-
-Analizar:
-
-* Que informaciÛn muestra
-* CÛmo visualiza RAID
-* Ventajas frente a CLI
-
----
-
-### Actividad 9 - InstalaciÛn de Webmin
-
-1. Agregar repositorio
-2. Instalar paquete
-3. Verificar puerto 10000
-4. Acceder al mÛdulo Linux RAID
-
-Comparar:
-
-* Nivel de detalle
-* Superficie de exposiciÛn
-* Configuraciones avanzadas
-
----
-
-### Actividad 10 - ConfiguraciÛn de Firewall
-
-Abrir puertos:
-
-```
-ufw allow 9090/tcp
-ufw allow 10000/tcp
-```
-
-Explicar:
-
-* Riesgo de exponer paneles administrativos
-* Diferencia entre acceso local y acceso remoto
-* Buenas pr·cticas (VPN, restricciÛn por IP)
-
----
-
-## 5. Evidencia a entregar
-
-Archivo ˙nico obligatorio:
-
-```
-IFS0-practicas/
-    practica_4/
-        raid_5_6.md
-```
-
-Contenido mÌnimo:
-
-1. IntroducciÛn del laboratorio
-2. Tabla comparativa de niveles RAID
-3. Evidencia de creaciÛn de RAID
-4. Evidencia de fallos y reconstrucciÛn
-5. Capturas o descripciÛn de Cockpit y Webmin
-6. An·lisis comparativo CLI vs GUI
-7. ReflexiÛn tÈcnica final
-
----
-
-## 6. Entrega en GitHub
-
-```
-IFS0-practicas/
-    practica_4/
-        raid_5_6.md
-```
-
----
-
-## 7. Criterios de evaluaciÛn
-
-* Correcta implementaciÛn de niveles RAID
-* Coherencia tÈcnica en explicaciÛn de paridad
-* Correcta configuraciÛn de persistencia
-* SimulaciÛn adecuada de fallos
-* Evidencia de reconstrucciÛn
-* ConfiguraciÛn funcional de Cockpit y Webmin
-* AplicaciÛn b†sica de control de acceso por firewall
-* An·lisis crÌtico comparativo
-
----
-
-## Errores que evitar en la pr·ctica
-
-* No monitorear proceso de reconstrucciÛn
-* No configurar persistencia
-* No limpiar metadatos antes de reutilizar discos
-* Exponer paneles sin firewall
-* Limitarse a ejecutar comandos sin explicar su propÛsito
-
+<hr>
+<h1 id="ifs0-practicas-conversion-requerimientos-infraestructura">
+  IFS0 ‚Äì Pr√°cticas de Infraestructura de Seridores
+</h1>
+
+<h2 id="guia-trabajo-practica-5">üìò Gu√≠a de Trabajo ‚Äì Pr√°ctica 5</h2>
+<p><strong>Unidad 2:</strong> Dise√±o de infraestructura f√≠sica</p>
+<p><strong>Pr√°ctica:</strong> Conversi√≥n de Requerimientos a Infraestructura F√≠sica</p>
+
+<hr>
+
+<h2 id="competencia">1Ô∏è‚É£ Competencia a desarrollar</h2>
+<p>
+  <strong>
+    Elabora un dise√±o de infraestructura de servidores a partir de requerimientos funcionales y no funcionales previamente validados, traduciendo necesidades del negocio en roles de servidor y componentes f√≠sicos, justificando decisiones t√©cnicas sin realizar implementaci√≥n.
+  </strong>
+</p>
+
+<hr>
+
+<h2 id="contexto">2Ô∏è‚É£ Contexto de la pr√°ctica (escenario)</h2>
+
+<p>
+  Una <strong>empresa de servicios profesionales</strong>, con <strong>25 empleados</strong>, utiliza un sistema interno
+  para apoyar sus actividades administrativas y operativas diarias.
+</p>
+
+<p>El sistema debe permitir principalmente:</p>
+<ul>
+  <li>Almacenamiento y consulta centralizada de documentos administrativos.</li>
+  <li>Acceso compartido a informaci√≥n entre distintas √°reas.</li>
+  <li>Registro y consulta de informaci√≥n b√°sica de clientes y proyectos.</li>
+</ul>
+
+<p><strong>Requerimientos funcionales:</strong></p>
+<ul>
+  <li>Acceso centralizado a la informaci√≥n.</li>
+  <li>Acceso simult√°neo de m√∫ltiples usuarios.</li>
+  <li>Disponibilidad durante la jornada laboral.</li>
+</ul>
+
+<p><strong>Requerimientos no funcionales:</strong></p>
+<ul>
+  <li>Protecci√≥n contra accesos no autorizados.</li>
+  <li>Reducci√≥n del riesgo de p√©rdida de informaci√≥n.</li>
+  <li>Separaci√≥n de componentes cr√≠ticos.</li>
+  <li>Capacidad de crecimiento gradual.</li>
+</ul>
+
+<p><strong>Condiciones adicionales y restricciones:</strong></p>
+<ul>
+  <li>No existe documentaci√≥n t√©cnica previa ni personal TI especializado.</li>
+</ul>
+<p><strong>Restricciones:</strong> No se implementa, no se seleccionan marcas y no se detallan configuraciones espec√≠ficas.</li>
+
+
+<hr>
+
+<h2 id="actividades">3Ô∏è‚É£ Actividades</h2>
+
+<h3 id="actividad-1">üß™ Actividad 1 ‚Äì Matriz de Conversi√≥n T√©cnica</h3>
+<p>Construya una tabla donde convierta cada requerimiento en atributos t√©cnicos y componentes f√≠sicos impactados.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requerimiento</th>
+      <th>Atributo T√©cnico</th>
+      <th>Componente F√≠sico</th>
+      <th>Decisi√≥n Conceptual</th>
+      <th>Riesgo si no se implementa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Debe incluir al menos los siguientes componentes:</strong> CPU, RAM, RAID, NIC, PSU (Energ√≠a) y Chasis/Expansi√≥n.</p>
+
+<h3 id="actividad-2">üß™ Actividad 2 ‚Äì Selecci√≥n de Roles de Servidor</h3>
+<p>Determine la necesidad de servidores de archivos, aplicaciones y bases de datos. Defina si conviene separar o consolidar roles.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rol de Servidor</th>
+      <th>Justificaci√≥n t√©cnica</th>
+      <th>Requerimientos que atiende</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Nota:</strong> No mencionar tecnolog√≠as ni sistemas operativos.</p>
+
+<h3 id="actividad-3">üß™ Actividad 3 ‚Äì An√°lisis de Componentes F√≠sicos</h3>
+<p>Para cada servidor propuesto, describa conceptualmente:</p>
+<ul>
+  <li><strong>CPU:</strong> Enfoque en concurrencia o carga espec√≠fica.</li>
+  <li><strong>RAM:</strong> Relaci√≥n con procesos simult√°neos.</li>
+  <li><strong>Almacenamiento:</strong> Tipo de RAID conceptual, n√∫mero m√≠nimo de discos y riesgo en modo degradado.</li>
+  <li><strong>Red:</strong> Cantidad de NICs y estrategia de segmentaci√≥n.</li>
+  <li><strong>Energ√≠a:</strong> ¬øFuente √∫nica o redundante?</li>
+</ul>
+
+<h3 id="actividad-4">üß™ Actividad 4 ‚Äì Identificaci√≥n de SPOF (Punto √önico de Falla)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Componente</th>
+      <th>¬øEs SPOF?</th>
+      <th>Mitigaci√≥n Conceptual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="evidencia">5Ô∏è‚É£ Evidencia a entregar</h2>
+<p><strong>Archivo √∫nico obligatorio:</strong> <code>practica_5/conversion_requerimientos_a_infraestructura.md</code></p>
+
+<p>El archivo debe contener:</p>
+<ol>
+  <li>Introducci√≥n al escenario.</li>
+  <li>Matriz de conversi√≥n completa.</li>
+  <li>Roles de servidor seleccionados.</li>
+  <li>An√°lisis f√≠sico de cada servidor.</li>
+  <li>Identificaci√≥n de SPOF.</li>
+  <li>Diagrama conceptual (Mermaid o imagen).</li>
+  <li>Justificaci√≥n t√©cnica final.</li>
+</ol>
+
+<hr>
+
+<h2 id="errores">üö´ Errores que evitar en la pr√°ctica</h2>
+<ul>
+  <li>‚ùå Uso de marcas (Dell, HP, Cisco) o modelos espec√≠ficos.</li>
+  <li>‚ùå Mencionar sistemas operativos (Windows, Linux) o software espec√≠fico.</li>
+  <li>‚ùå Dise√±ar sin alineaci√≥n a los requerimientos del escenario de 25 empleados.</li>
+</ul>
