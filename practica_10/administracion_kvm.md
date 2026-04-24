@@ -1,5 +1,5 @@
-# IFS0 - Pr ctica 10  
-## Administraci¢n y Monitoreo de M quinas Virtuales KVM
+# IFS0 - PrÂ ctica 10  
+## Administracion y Monitoreo de MÂ quinas Virtuales KVM
 
 ---
 
@@ -9,7 +9,7 @@
 - **Asignatura:** IFS0 - Analizando Necesidades de Infraestructura de Servidores  
 - **Docente:**  
 - **Unidad:** 3  
-- **Pr ctica:** 10 - Administraci¢n KVM  
+- **PrÂ ctica:** 10 - AdministraciÂ¢n KVM  
 - **Fecha de entrega:**  
 - **Nombre del estudiante / integrantes:** 
 	- Nombre completo - Carnet
@@ -20,9 +20,9 @@
 
 ---
 
-## 2. Introducci¢n
+## 2. IntroducciÂ¢n
 
-Describa el objetivo de la pr ctica y el contexto del uso de virtualizaci¢n en servidores.
+Describa el objetivo de la practica y el contexto del uso de virtualizacion en servidores.
 
 ---
 
@@ -30,12 +30,12 @@ Describa el objetivo de la pr ctica y el contexto del uso de virtualizaci¢n en s
 
 ## Resultados obtenidos
 
-| Verificaci¢n | Resultado obtenido |
+| VerificaciÂ¢n | Resultado obtenido |
 |-------------|-------------------|
 | Estado tras `virsh start` | |
 | Estado tras `virsh suspend` | |
 | Estado tras `virsh resume` | |
-| Archivo `.state` (ruta y tama¤o) | |
+| Archivo `.state` (ruta y tamaÃ±o) | |
 | Estado tras `virsh restore` | |
 | Estado tras `virsh shutdown` | |
 
@@ -56,12 +56,12 @@ virsh domstate vm-rocky10-lab
   
 ## Resultados obtenidos  
   
-| Verificaci¢n | Resultado obtenido |  
+| VerificaciÂ¢n | Resultado obtenido |  
 |-------------|-------------------|  
 | Formato del disco (qcow2) | |  
 | Nombre del snapshot baseline | |  
 | Nombre del snapshot con cambio | |  
-| µrbol de snapshots | |  
+| Âµrbol de snapshots | |  
 | Archivo presente en snapshot con cambio | |  
 | Archivo eliminado tras revert | |  
   
@@ -81,7 +81,7 @@ qemu-img info <ruta>
   
 ## Resultados obtenidos  
   
-| Verificaci¢n | Resultado obtenido |  
+| Verificacion | Resultado obtenido |  
 |-------------|-------------------|  
 | Nombre del clon | |  
 | UUID VM original | |  
@@ -105,13 +105,13 @@ virsh domiflist vm-rocky10-clone
   
 ## Resultados obtenidos  
   
-| Par metro | Valor observado |  
+| Parametro | Valor observado |  
 |----------|----------------|  
 | Columnas de virt-top | |  
 | CPU time | |  
 | RAM asignada | |  
 | Lecturas de disco | |  
-| Tama¤o virtual vs real | |  
+| TamaÂ¤o virtual vs real | |  
   
 ---  
   
@@ -125,15 +125,15 @@ virsh domblkstat vm-rocky10-lab vda
   
 ---  
   
-## 7. Extracci¢n de archivos con libguestfs  
+## 7. Extraccion de archivos con `libguestfs`  
   
 ## Resultados  
   
-| Acci¢n | Resultado |  
+| AcciÂ¢n | Resultado |  
 |--------|----------|  
 | Sistemas detectados | |  
 | Uso de disco (virt-df) | |  
-| Archivo extra¡do (/etc/hostname) | |  
+| Archivo extraÂ¡do (/etc/hostname) | |  
   
 ---  
   
@@ -146,31 +146,31 @@ virt-copy-out -a <ruta> /etc/hostname .
   
 ---  
   
-## 8. An lisis tecnico  
+## 8. Analisis tecnico  
   
 Responda:  
   
-- ¨Que ventajas ofrece el uso de snapshots en producci¢n?  
-- ¨Por que el clonado es importante en entornos empresariales?  
-- ¨Que riesgos existen si no se monitorean las VMs?  
-- ¨C¢mo contribuye KVM a la alta disponibilidad (HA)?  
+- Â¿Que ventajas ofrece el uso de snapshots en produccion?  
+- Â¿Por que el clonado es importante en entornos empresariales?  
+- Â¿Que riesgos existen si no se monitorean las VMs?  
+- Â¿Como contribuye KVM a la alta disponibilidad (HA)?  
   
 ---  
   
-## 9. Conclusi¢n  
+## 9. Conclusion  
   
 Explique:  
   
-- Importancia de la administraci¢n desde CLI  
+- Importancia de la administracion desde CLI  
 - Impacto en eficiencia operativa  
-- Aplicaci¢n en entornos reales  
+- AplicaciÂ¢n en entornos reales  
   
 ---  
   
 ##  Restricciones  
   
 - No omitir evidencias de comandos  
-- No usar interfaces gr ficas  
+- No usar interfaces grÂ ficas  
 - No inventar resultados  
 - Todas las salidas deben ser reales del sistema  
   
