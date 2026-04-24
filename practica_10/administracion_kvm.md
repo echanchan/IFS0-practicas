@@ -1,5 +1,5 @@
-# IFS0 - Pr ctica 10  
-## Administracion y Monitoreo de M quinas Virtuales KVM
+# IFS0 - Practica 10  
+## Administracion y Monitoreo de Maquinas Virtuales KVM
 
 ---
 
@@ -20,7 +20,7 @@
 
 ---
 
-## 2. Introducci¢n
+## 2. Introduccion
 
 Describa el objetivo de la practica y el contexto del uso de virtualizacion en servidores.
 
